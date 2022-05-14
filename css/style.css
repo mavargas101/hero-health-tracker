@@ -2,20 +2,22 @@
     box-sizing: border-box;
 }
 body{
-    background-color: black;
     font-family: 'Cinzel', sans-serif;
-    background: url('1.png') top no-repeat, black;
-
+    background: url('1.png') top no-repeat, black ;
+    background-attachment: fixed;
+    background-size: auto 100%;
 }
 aside{
     display: flex;
     flex-direction: column;
     position: fixed;
+    top: 0;
     left: 2rem;
     color: white;
-    z-index: 1;
+    z-index: 2;
     max-width: 30rem;
     margin:1rem;
+    text-align: center;
 }
 a{
      padding: 1rem;
@@ -32,12 +34,14 @@ a{
 a:active{
     top:0.1em;
 }
+span{
+    color:#efd046;
+}
 
 .main-container{
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    border: black solid 1px;
+    gap: 2rem;
     margin: 0 auto;
 
     max-width: 45rem;
@@ -114,7 +118,8 @@ a:active{
     transition: 200ms ease-in-out;
     /* border: brown solid 1px; */
     border-radius: 1rem;
-    justify-content: right;
+    justify-content: right;box-shadow: rgb(0 0 0 / 10%) 0px 10px 15px -3px, rgb(0 0 0 / 5%) 0px 4px 6px -2px;
+
 
 
 }
@@ -126,21 +131,25 @@ a:active{
 }
 .hero-container.darren{
     background: url("darren.png") no-repeat left center/50%, url("HP.png") no-repeat 80% center / contain, linear-gradient(90deg, rgba(255,255,255,0) 0%, #efd046 100%);
+    box-shadow: 0px 0px 20px 20px #efd04635;
 
 }
 .hero-container.arcanas{
-    background: url("arcanas.png") no-repeat left center/50%, url("HP.png") no-repeat 80% center / contain, linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(0,122,255,1) 100%);
- 
+    background: url("arcanas.png") no-repeat left center/50%, url("HP.png") no-repeat 80% center / contain, linear-gradient(90deg, rgba(255,255,255,0) 0%, rgb(0, 123, 255) 100%);
+    box-shadow: 0px 0px 20px 20px rgba(0, 123, 255, 0.356);
 }
 .hero-container.heathenmoore{
     background: url("heathenmoore.png") no-repeat left center/50%, url("HP.png") no-repeat 80% center / contain, linear-gradient(90deg, rgba(255,255,255,0) 0%, #62ef46 100%);
+    box-shadow: 0px 0px 20px 20px #62ef4635;
 }
 .hero-container.scathassia{
     background: url("scathassia.png") no-repeat left center/50%, url("HP.png") no-repeat 80% center / contain, linear-gradient(90deg, rgba(255,255,255,0) 0%, #ef4646 100%);
+    box-shadow: 0px 0px 20px 20px #ef464635;
 
 }
 .hero-container.nascha{
     background: url("nascha.png") no-repeat left center/50%, url("HP.png") no-repeat 80% center / contain, linear-gradient(90deg, rgba(255,255,255,0) 0%, #ef8a46 100%);
+    box-shadow: 0px 0px 20px 20px #ef8a4635;
 
 }
 .modal{
@@ -154,8 +163,11 @@ a:active{
     flex-direction: row;
     flex-wrap: wrap; 
     gap: 1rem;
-    border: black solid 1px;
-    background-color: white;
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0.966);
+    box-shadow: 0px 0px 40px 20px rgba(248, 246, 133, 0.267);
+    padding: 2rem;
+
 }
 
 .modal.active{
@@ -177,7 +189,6 @@ a:active{
     pointer-events: all;
   }
 .modal-hero-button{
-    margin: 1rem;
     border-radius: 50%;
     width: 10rem;
     height: 10rem;
@@ -199,5 +210,35 @@ a:active{
 }
 .modal-hero-button.nascha{
     background: url("nascha-modal.png") center/contain no-repeat, linear-gradient(90deg, rgba(255,255,255,0) 0%, #ef8a46 100%);
+
+}
+.disabled{
+    filter:saturate(0);
+}
+@media screen and (max-width: 1800px) {
+    aside{
+        position:relative;
+        margin: 2rem auto;
+        left: 0;
+        padding: 1rem;
+
+    }
+
+    .hero-container{
+        height: 10rem;
+    }
+    .health-text{
+        margin-right: 6rem;
+        font-size: 4rem;
+    }
+    .modal{
+        flex-direction: column;
+
+    }
+    .modal-hero-button{
+        border-radius: 50%;
+        width: 7rem;
+        height: 7rem;
+    }
 
 }

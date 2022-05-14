@@ -26,8 +26,10 @@ class Game {
         this.gameContainer.querySelector('.add-hero-button').addEventListener('click', ()=> this.openHeroSelection());
         this.modal.querySelectorAll('.modal-hero-button').forEach(element => { 
             element.addEventListener('click', ()=> {
-                this.addHero(this.heroList[element.dataset.hero])
-                element.remove();
+                if(!element.classList.contains('disabled')){
+                    this.addHero(this.heroList[element.dataset.hero])
+                    element.classList.add('disabled');
+                }
             });
         })
         this.overlay.addEventListener('click', () => {
