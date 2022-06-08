@@ -19,11 +19,14 @@ class Hero extends Entity{
 class Game {
     constructor(){
         this.gameContainer = document.querySelector('.main-container'); // Holds the main container that will hold every companion container
-        this.heroList = [{name: "darren", health: 32}, {name: 'scathassia',health: 34}, {name: "heathenmoore", health: 40,},{name: "arcanas", health: 32} ,{name: 'nascha', health: 36}];
+        this.heroList = [{name: "darren", health: 32}, {name: 'scathassia',health: 34}, {name: "heathenmoore", health: 40,},{name: "arcanas", health: 32} ,{name: 'nascha', health: 36},{name: 'briar', health: 32},{name: 'gwendolyn', health: 32},{name: 'jugolach', health: 30}];
         this.modal = document.querySelector('.modal'); // Modal that lets you select which Hero you will use
         this.overlay = document.querySelector('.overlay'); //Overlay for modal
+        this.customBtn = document.querySelector('.custom-button');
+        this.customModal = document.querySelector('.custom-modal')
         this.playerList = [];
         this.gameContainer.querySelector('.add-hero-button').addEventListener('click', ()=> this.openHeroSelection());
+        this.gameContainer.querySelector('.settings-button').addEventListener('click', ()=> this.openHeroSelection());
         this.modal.querySelectorAll('.modal-hero-button').forEach(element => { 
             element.addEventListener('click', ()=> {
                 if(!element.classList.contains('disabled')){
@@ -32,10 +35,14 @@ class Game {
                 }
             });
         })
+        this.customBtn.addEventListener('click', ()=> this.openCustomMenu())
         this.overlay.addEventListener('click', () => {
-            
+            if(this.modal.classList.contains('active'))
             this.modal.classList.remove('active');
+            if(this.overlay.classList.contains('active'))
             this.overlay.classList.remove('active');
+            if(this.customModal.classList.contains('active'))
+            this.customModal.classList.remove('active');
             
     })
     }
@@ -79,8 +86,18 @@ class Game {
         this.overlay.classList.remove('active');
     }
     openHeroSelection(){
-        this.modal.classList.add('active');
-        this.overlay.classList.add('active');
+        this.toggleModal();
+        this.toggleOverlay();
+    }
+    toggleModal(){
+        this.modal.classList.toggle('active');
+    }
+    toggleOverlay(){
+        this.overlay.classList.toggle('active');
+    }
+    openCustomMenu(){
+        this.toggleModal();
+        this.customModal.classList.add('active');
     }
 
     

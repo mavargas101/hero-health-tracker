@@ -14,7 +14,7 @@ aside{
     top: 0;
     left: 2rem;
     color: white;
-    z-index: 2;
+    z-index: 1;
     max-width: 30rem;
     margin:1rem;
     text-align: center;
@@ -130,27 +130,39 @@ span{
 
 }
 .hero-container.darren{
-    background: url("darren.png") no-repeat left center/50%, url("HP.png") no-repeat 80% center / contain, linear-gradient(90deg, rgba(255,255,255,0) 0%, #efd046 100%);
-    box-shadow: 0px 0px 20px 20px #efd04635;
+    background: url("darren.png") no-repeat left center/50%, url("HP.png") no-repeat 80% center / contain, #e0b225;
+    box-shadow: 0px 0px 20px 20px #e0b22530;
 
 }
 .hero-container.arcanas{
-    background: url("arcanas.png") no-repeat left center/50%, url("HP.png") no-repeat 80% center / contain, linear-gradient(90deg, rgba(255,255,255,0) 0%, rgb(0, 123, 255) 100%);
-    box-shadow: 0px 0px 20px 20px rgba(0, 123, 255, 0.356);
+    background: url("arcanas.png") no-repeat left center/50%, url("HP.png") no-repeat 80% center / contain, #0f61a3;
+    box-shadow: 0px 0px 20px 20px #0f61a330;
 }
+
 .hero-container.heathenmoore{
-    background: url("heathenmoore.png") no-repeat left center/50%, url("HP.png") no-repeat 80% center / contain, linear-gradient(90deg, rgba(255,255,255,0) 0%, #62ef46 100%);
-    box-shadow: 0px 0px 20px 20px #62ef4635;
+    background: url("heathenmoore.png") no-repeat left center/50%, url("HP.png") no-repeat 80% center / contain, #3c7e3c;
+    box-shadow: 0px 0px 20px 20px #3c7e3c30;
 }
 .hero-container.scathassia{
-    background: url("scathassia.png") no-repeat left center/50%, url("HP.png") no-repeat 80% center / contain, linear-gradient(90deg, rgba(255,255,255,0) 0%, #ef4646 100%);
-    box-shadow: 0px 0px 20px 20px #ef464635;
+    background: url("scathassia.png") no-repeat left center/50%, url("HP.png") no-repeat 80% center / contain, #e71e25;
+    box-shadow: 0px 0px 20px 20px #e71e2530;
 
 }
 .hero-container.nascha{
-    background: url("nascha.png") no-repeat left center/50%, url("HP.png") no-repeat 80% center / contain, linear-gradient(90deg, rgba(255,255,255,0) 0%, #ef8a46 100%);
-    box-shadow: 0px 0px 20px 20px #ef8a4635;
-
+    background: url("nascha.png") no-repeat left center/50%, url("HP.png") no-repeat 80% center / contain, #f05423;
+    box-shadow: 0px 0px 20px 20px #f0542330;
+}
+.hero-container.briar{
+    background: url("briar.png") no-repeat left center/50%, url("HP.png") no-repeat 80% center / contain, #8e6e53;
+    box-shadow: 0px 0px 20px 20px #f0542330;
+}
+.hero-container.gwendolyn{
+    background: url("gwendolyn.png") no-repeat left center/50%, url("HP.png") no-repeat 80% center / contain, #a757a2;
+    box-shadow: 0px 0px 20px 20px #f0542330;
+}
+.hero-container.jugolach{
+    background: url("jugolach.png") no-repeat left center/50%, url("HP.png") no-repeat 80% center / contain, #ee342c;
+    box-shadow: 0px 0px 20px 20px #f0542330;
 }
 .modal{
     position: fixed;
@@ -169,6 +181,26 @@ span{
     padding: 2rem;
 
 }
+.custom-modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    transition: 200ms ease-in-out;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; 
+    gap: 1rem;
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0.966);
+    box-shadow: 0px 0px 40px 20px rgba(248, 246, 133, 0.267);
+    padding: 2rem;
+    color: white;
+}
+.custom-modal.active{
+    transform: translate(-50%, -50%) scale(1);
+}
 
 .modal.active{
     transform: translate(-50%, -50%) scale(1);
@@ -181,7 +213,7 @@ span{
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,.5);
+    background-color: rgba(0,0,0,.75);
     pointer-events: none;
 }
 .overlay.active{
@@ -195,22 +227,48 @@ span{
     border: black solid 1px;
 }
 .modal-hero-button.darren{
-    background: url("darren-modal.png") center/contain no-repeat, linear-gradient(90deg, rgba(255,255,255,0) 0%, #efd046 100%);
+    background: url("darren.png") center/contain no-repeat, linear-gradient(90deg, rgba(255,255,255,0) 0%, #efd046 100%);
+    background-size: 150%;
 }
 .modal-hero-button.arcanas{
-    background: url("arcanas-modal.png") center/contain no-repeat, linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(0,122,255,1) 100%);
+    background: url("arcanas.png") center/contain no-repeat, linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(0,122,255,1) 100%);
+    background-size: 150%;
  
 }
 .modal-hero-button.heathenmoore{
-    background: url("heathenmoore-modal.png") center/contain no-repeat, linear-gradient(90deg, rgba(255,255,255,0) 0%, #62ef46 100%);
+    background: url("heathenmoore.png") center/contain no-repeat, linear-gradient(90deg, rgba(255,255,255,0) 0%, #62ef46 100%);
+    background-size: 150%;
 }
 .modal-hero-button.scathassia{
-    background: url("scathassia-modal.png") center/contain no-repeat, linear-gradient(90deg, rgba(255,255,255,0) 0%, #ef4646 100%);
+    background: url("scathassia.png") center/contain no-repeat, linear-gradient(90deg, rgba(255,255,255,0) 0%, #ef4646 100%);
+    background-size: 150%;
 
 }
 .modal-hero-button.nascha{
-    background: url("nascha-modal.png") center/contain no-repeat, linear-gradient(90deg, rgba(255,255,255,0) 0%, #ef8a46 100%);
+    background: url("nascha.png") center/contain no-repeat, linear-gradient(90deg, rgba(255,255,255,0) 0%, #ef8a46 100%);
+    background-size: 150%;
 
+}
+.modal-hero-button.briar{
+    background: url("briar.png") center/contain no-repeat, linear-gradient(90deg, rgba(255,255,255,0) 0%, #8e6e53 100%);
+    background-size: 150%;
+
+}
+.modal-hero-button.gwendolyn{
+    background: url("gwendolyn.png") center/contain no-repeat, linear-gradient(90deg, rgba(255,255,255,0) 0%, #a757a2 100%);
+    background-size: 150%;
+
+}
+.modal-hero-button.jugolach{
+    background: url("jugolach.png") center/contain no-repeat, linear-gradient(90deg, rgba(255,255,255,0) 0%, #ee342c 100%);
+    background-size: 150%;
+
+}
+.custom-button{
+    border-radius: 50%;
+    width: 10rem;
+    height: 10rem;
+    border: white solid 1px;
 }
 .disabled{
     filter:saturate(0);
@@ -223,7 +281,24 @@ span{
         padding: 1rem;
 
     }
-
+    .add-hero-button{
+        display: none;
+    }
+    .settings-button{
+        position: fixed;
+        bottom: 1rem;
+        margin: 0 auto;
+        display: flex;
+        border-radius: 50%;
+        background-color: gray;
+        color: white;
+        width: 5rem;
+        height: 5rem;
+        justify-content: center;
+        align-items: center;
+        left: 75%;
+        z-index: 2;
+    }
     .hero-container{
         height: 10rem;
     }
@@ -237,8 +312,8 @@ span{
     }
     .modal-hero-button{
         border-radius: 50%;
-        width: 7rem;
-        height: 7rem;
+        width: 5rem;
+        height: 5rem;
     }
 
 }
